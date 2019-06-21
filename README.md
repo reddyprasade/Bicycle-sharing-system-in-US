@@ -11,3 +11,30 @@ In 2017, the number of bike share bikes in the U.S. more than doubled – from 4
 The large influx of dockless bike share bikes across the U.S. has not yet translated into substantial mobility gains. NACTO estimates that up to 1.4 million trips were made on dockless bike share bikes in the U.S. in 2017, making up about 4% of trips. NACTO’s methodology for counting dockless bike share trips is provided in the Appendix (below).
 
 ![](https://lh3.googleusercontent.com/-nmmWzaLgfLA/XQoXq8ursbI/AAAAAAAAeVs/48cva6nvZBQtGQciSqXKWQwDk-9TrwC2ACK8BGAs/s0/2019-06-19.png)
+
+
+# Intersting question and We have To Answers
+Q1: Data Lading In Dict
+Q2: Get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+Q3 : Get user input for month (all, january, february, ... , june)
+Q4: Get user input for day of week (all, monday, tuesday, ... sunday)
+Q5: Loads data for the specified city and filters by month and day if applicable.
+Q6: load data file into a dataframe
+Q7: convert the Start Time column to datetime
+Q8: Extract month and day of week from Start Time to create new columns
+Q9: filter by month if applicable
+Q10: Displays statistics on the most frequent times of travel.
+	Q10.1: display the most common month
+	Q10.2: display the most common day of week
+	Q10.3 display the most common start hour
+Q11:Display most commonly used start station
+Q12: display most commonly used end station
+Q13: display most frequent combination of start station and end station trip
+Q14: Displays statistics on the total and average trip duration.
+	Q 14.1: display total travel time
+	Q14.2: display mean travel time
+Q15: Displays statistics on bikeshare users
+	Q15.1: Display counts of user types
+	Q15.2: Display counts of gender
+	Q15.3 Display earliest, most recent, and most common year of birth
+Q16: Descriptive Stastices 
