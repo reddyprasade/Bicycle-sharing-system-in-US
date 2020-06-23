@@ -3,7 +3,6 @@ import time
 import pandas as pd
 import numpy as np
 
-
 # Q1: Data Lading In Dict
 CITY_DATA = { 'Chicago': 'chicago.csv',
 
@@ -11,126 +10,58 @@ CITY_DATA = { 'Chicago': 'chicago.csv',
 
               'Washington': 'washington.csv' }
 
-
-
 # Filtering Data According to User Input funcation such as City, Month,Day
-
 def get_filters():
-
     """
-
     Asks user to specify a city, month, and day to analyze.
-
     Returns:
-
         (str) city - name of the city to analyze
-
         (str) month - name of the month to filter by, or "all" to apply no month filter
-
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
-
     """
-
-    print('\nHello! Let\'s explore some US bikeshare data!\n')
-
+    print('\nHello! Let\'s explore some US bikeshare system data!\n')
     # Q2: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-
-
     while True:
-
       city = input("\nWhich city would you like to filter by? New York City, Chicago or Washington?\n")
-
       if city not in ('New York City', 'Chicago', 'Washington'):
-
         print("Sorry, I didn't catch that. Try again.")
-
         continue
-
       else:
-
         break
-
-
-
     # Q3 : get user input for month (all, january, february, ... , june)
-
-
-
     while True:
-
       month = input("\nWhich month would you like to filter by? January, February, March, April, May, June or type 'all' if you do not have any preference?\n")
-
       if month not in ('January', 'February', 'March', 'April', 'May', 'June', 'all'):
-
         print("Sorry, I didn't catch that. Try again.")
-
         continue
-
       else:
-
         break
-
-
-
     # Q4: get user input for day of week (all, monday, tuesday, ... sunday)
-
-
-
     while True:
       day = input("\nAre you looking for a particular day? If so, kindly enter the day as follows: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or type 'all' if you do not have any preference.\n")
-
       if day not in ('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'all'):
-
-        print("Sorry, I didn't catch that. Try again.")
-
+       print("Sorry, I didn't catch that. Try again.")
         continue
-
       else:
-
         break
-
     print('@'*40)
-
     return city, month, day
-
-
-
-
 # Q5:Loads data for the specified city and filters by month and day if applicable. 
 def load_data(city, month, day):
-
-
-
     """
-
     Loads data for the specified city and filters by month and day if applicable.
-
-
-
     Args:
-
         (str) city - name of the city to analyze
-
         (str) month - name of the month to filter by, or "all" to apply no month filter
-
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
-
     Returns:
-
         df - Pandas DataFrame containing city data filtered by month and day
-
     """
-
     #Q6: load data file into a dataframe
-
     df = pd.read_csv(CITY_DATA[city])
-
-
-
+	#print(df.head())
     #Q7: convert the Start Time column to datetime
-
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-
 
 
     # Q8: Extract month and day of week from Start Time to create new columns
@@ -188,45 +119,19 @@ def time_stats(df):
 
 
     # Q10.1: display the most common month
-
-
-
     popular_month = df['month'].mode()[0]
-
     print('Most Common Month:', popular_month)
 
 
-
-
-
     # Q10.2: display the most common day of week
-
-
-
     popular_day = df['day_of_week'].mode()[0]
-
     print('Most Common day:', popular_day)
 
 
-
-
-
-
-
     # Q10.3 display the most common start hour
-
-
-
     df['hour'] = df['Start Time'].dt.hour
-
     popular_hour = df['hour'].mode()[0]
-
     print('Most Common Hour:', popular_hour)
-
-
-
-
-
     print("\nThis took %s seconds." % (time.time() - start_time))
 
     print('#'*80)
@@ -241,7 +146,7 @@ def station_stats(df):
 
 
 
-    print('\nCalculating The Most Popular Stations and Trip...\n')
+    print('Calculating The Most Popular Stations and Trip...\n')
 
     start_time = time.time()
 
@@ -448,10 +353,6 @@ def main():
         if restart.lower() != 'yes':
 
             break
-
-
-
-
 
 if __name__ == "__main__":
 
